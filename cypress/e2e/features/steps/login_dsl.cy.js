@@ -1,8 +1,13 @@
 /// <reference types="cypress" />
-import {Given, When, Then, And} from "cypress-cucumber-preprocessor/steps"
+import {Before, Given, When, Then, And} from "cypress-cucumber-preprocessor/steps"
+
+Before(() => {
+    cy.clearCookies()
+    cy.clearAllSessionStorage({log: true})
+    cy.visit("https://www.saucedemo.com")
+})
 
 Given("I login to Swag Labs UI", (datatable) => {
-    cy.visit("https://www.saucedemo.com/")
     datatable.hashes().forEach((element) => {
         cy.get('#user-name').type(element.username)
         cy.get('#password').type('secret_sauce')

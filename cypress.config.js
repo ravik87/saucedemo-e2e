@@ -9,8 +9,8 @@ module.exports = defineConfig({
       // implement node event listeners here
       on("file:preprocessor", cucumber());
     },
+    chromeWebSecurity: false
   },
 });
-
 
 
