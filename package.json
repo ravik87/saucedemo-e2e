@@ -1,0 +1,28 @@
+{
+  "name": "saucedemo-e2e",
+  "version": "1.0.0",
+  "description": "test automation demo using cypress & cucumber",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ravik87/saucedemo-e2e.git"
+  },
+  "keywords": [
+    "Cypress",
+    "BDD",
+    "Cucumber"
+  ],
+  "author": "RK",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ravik87/saucedemo-e2e/issues"
+  },
+  "homepage": "https://github.com/ravik87/saucedemo-e2e#readme",
+  "dependencies": {
+    "cypress": "^13.13.1",
+    "cypress-cucumber-preprocessor": "^4.3.1"
+  }
+}
