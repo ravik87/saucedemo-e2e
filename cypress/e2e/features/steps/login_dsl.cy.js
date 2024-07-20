@@ -13,7 +13,7 @@ Given("I login to Swag Labs", (datatable) => {
     });
 });
 
-Then("I should see homepage", (datatable) => {
+And("I see homepage", (datatable) => {
     datatable.hashes().forEach((element) => {
         cy.get('.app_logo').should('have.text', element.title)
     });

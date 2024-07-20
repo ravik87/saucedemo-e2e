@@ -9,7 +9,7 @@
     Given I login to Swag Labs
       | username   |
       | <username> |
-    Then I should see homepage
+    Then I see homepage
       | title     |
       | Swag Labs |
     And I logout from Swag Labs
