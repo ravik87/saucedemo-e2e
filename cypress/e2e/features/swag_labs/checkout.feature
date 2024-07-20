@@ -14,7 +14,7 @@
       | Swag Labs |
 
     Scenario: Checkout random products
-      Given I add "3" random items to my cart
+      Given I add random "3" items to my cart
         | inventory                |
         | Sauce Labs Backpack      |
         | Sauce Labs Bolt T-Shirt  |
@@ -24,4 +24,4 @@
       When I checkout items with my details
         | firstname | lastname | zip    |
         | SysInt    | Test     | 410203 |
-      Then I place the order with selected items
+      Then I place the order with checkout items
