@@ -6,7 +6,7 @@
     So that I can start checkout flow
 
   Scenario Outline: Login happy day
-    Given I login to Swag Labs UI
+    Given I login to Swag Labs
       | username   |
       | <username> |
     Then I should see homepage

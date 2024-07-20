@@ -1,17 +1,15 @@
 /// <reference types="cypress" />
 import {Before, Given, When, Then, And} from "cypress-cucumber-preprocessor/steps"
+import LoginPage from "../../../support/modules/web_ui/pages/login_page.cy";
 
 Before(() => {
-    cy.clearCookies()
-    cy.clearAllSessionStorage({log: true})
-    cy.visit("https://www.saucedemo.com")
+    LoginPage.visit()
 })
 
-Given("I login to Swag Labs UI", (datatable) => {
+Given("I login to Swag Labs", (datatable) => {
     datatable.hashes().forEach((element) => {
-        cy.get('#user-name').type(element.username)
-        cy.get('#password').type('secret_sauce')
-        cy.get('#login-button').click()
+        LoginPage.enterCredentials(element.username, 'secret_sauce')
+        LoginPage.login()
     });
 });
 
