@@ -7,11 +7,10 @@
 
   Scenario Outline: Login happy day
     Given I login to Swag Labs
-      | username   |
-      | <username> |
-    Then I see homepage
-      | title     |
-      | Swag Labs |
+      | username | <username> |
+    Then I see products inventory page
+      | logo_name | Swag Labs |
+      | title     | Products  |
     And I logout from Swag Labs
 
     Examples:

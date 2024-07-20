@@ -18,13 +18,15 @@ class LoginPage{
         cy.visit(URL)
     }
 
-    enterCredentials(username, password) {
+    withCredentials(username, password) {
         cy.get(this.#username).type(username)
         cy.get(this.#password).type(password)
+        return this;
     }
 
     login() {
         cy.get(this.#login_button).click()
+        return this;
     }
 
 }

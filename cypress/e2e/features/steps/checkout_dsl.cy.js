@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
-import {Before, Given, When, Then, And} from "cypress-cucumber-preprocessor/steps"
-import SwagLabs from "../../../support/modules/web_ui/swag_labs.cy";
+import {Given, When, Then, And} from "cypress-cucumber-preprocessor/steps"
+import SwagLabs from "../../../support/modules/web_ui/swag_labs";
 
 
 Given("I add random {int} items to my cart", num_of_items => {

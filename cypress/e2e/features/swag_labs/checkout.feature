@@ -7,11 +7,10 @@
 
   Background: Visit Swag Labs
     Given I login to Swag Labs
-      | username      |
-      | standard_user |
-    And I see homepage
-      | title     |
-      | Swag Labs |
+      | username | standard_user |
+    And I see products inventory page
+      | logo_name | Swag Labs |
+      | title     | Products  |
 
     Scenario: Checkout random products
       Given I add random "3" items to my cart

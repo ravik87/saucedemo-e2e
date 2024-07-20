@@ -1,25 +1,27 @@
 /// <reference types="cypress" />
 import {Before, Given, When, Then, And} from "cypress-cucumber-preprocessor/steps"
-import SwagLabs from "../../../support/modules/web_ui/swag_labs.cy";
+import SwagLabs from "../../../support/modules/web_ui/swag_labs";
+import SwagLabsUIAssert from "../../../support/assertion/web_ui/swag_labs_ui_assert";
 
 Before(() => {
     SwagLabs.loginPage().visit()
 })
 
 Given("I login to Swag Labs", (datatable) => {
-    datatable.hashes().forEach((element) => {
-        SwagLabs.loginPage().enterCredentials(element.username, 'secret_sauce')
-        SwagLabs.loginPage().login()
-    });
+    const credentials = datatable.rowsHash();
+    SwagLabs.loginPage()
+        .withCredentials(credentials["username"], 'secret_sauce')
+        .login();
 });
 
-And("I see homepage", (datatable) => {
-    datatable.hashes().forEach((element) => {
-        cy.get('.app_logo').should('have.text', element.title)
-    });
+And("I see products inventory page", (datatable) => {
+    const page_info = datatable.rowsHash();
+    SwagLabsUIAssert.inventoryPage()
+        .hasLogo(page_info["logo_name"])
+        .hasTitle(page_info["title"]);
 });
 
 Given("I logout from Swag Labs", () => {
-    cy.get('#react-burger-menu-btn').click()
-    cy.get('[data-test="logout-sidebar-link"]').click()
+    SwagLabs.inventoryPage()
+        .logout();
 });
