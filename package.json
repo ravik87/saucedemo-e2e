@@ -23,6 +23,7 @@
   "homepage": "https://github.com/ravik87/saucedemo-e2e#readme",
   "dependencies": {
     "cypress": "^13.13.1",
-    "cypress-cucumber-preprocessor": "^4.3.1"
+    "cypress-cucumber-preprocessor": "^4.3.1",
+    "prettier": "^3.3.3"
   }
 }
