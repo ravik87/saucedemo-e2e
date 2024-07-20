@@ -1,15 +1,15 @@
 /// <reference types="cypress" />
 import {Before, Given, When, Then, And} from "cypress-cucumber-preprocessor/steps"
-import LoginPage from "../../../support/modules/web_ui/pages/login_page.cy";
+import SwagLabs from "../../../support/modules/web_ui/swag_labs.cy";
 
 Before(() => {
-    LoginPage.visit()
+    SwagLabs.loginPage().visit()
 })
 
 Given("I login to Swag Labs", (datatable) => {
     datatable.hashes().forEach((element) => {
-        LoginPage.enterCredentials(element.username, 'secret_sauce')
-        LoginPage.login()
+        SwagLabs.loginPage().enterCredentials(element.username, 'secret_sauce')
+        SwagLabs.loginPage().login()
     });
 });
 

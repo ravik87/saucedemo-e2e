@@ -1,23 +1,30 @@
 const URL = "https://www.saucedemo.com"
-const USERNAME = '#user-name'
-const PASSWORD = '#password'
-const LOGIN_BUTTON = '#login-button'
 
 class LoginPage{
+    #username = '#user-name'
+    #password = '#password'
+    #login_button = '#login-button'
 
-    static visit() {
+    constructor() {
+        if (LoginPage._instance) {
+            return LoginPage._instance
+        }
+        LoginPage._instance = this;
+    }
+
+    visit() {
         cy.clearCookies()
         cy.clearAllSessionStorage({log: true})
         cy.visit(URL)
     }
 
-    static enterCredentials(username, password) {
-        cy.get(USERNAME).type(username)
-        cy.get(PASSWORD).type(password)
+    enterCredentials(username, password) {
+        cy.get(this.#username).type(username)
+        cy.get(this.#password).type(password)
     }
 
-    static login() {
-        cy.get(LOGIN_BUTTON).click()
+    login() {
+        cy.get(this.#login_button).click()
     }
 
 }
