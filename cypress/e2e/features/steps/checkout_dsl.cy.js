@@ -3,6 +3,7 @@ import {Given, When, Then, And} from "cypress-cucumber-preprocessor/steps"
 import Utility from "../../../support/general/utils/utility";
 import SwagLabs from "../../../support/modules/web_ui/swag_labs";
 import SwagLabsUIAssert from "../../../support/assertion/web_ui/swag_labs_ui_assert";
+import CartPage from "../../../support/modules/web_ui/pages/cart_page";
 
 
 Given("I add random {string} items to my cart", (items_count, datatable) => {
@@ -16,6 +17,8 @@ Given("I add random {string} items to my cart", (items_count, datatable) => {
 });
 
 When("I checkout items with my details", (datatable) => {
+    SwagLabs.cartPage()
+        .checkout();
 });
 
 Then("I place the order with checkout items", () => {

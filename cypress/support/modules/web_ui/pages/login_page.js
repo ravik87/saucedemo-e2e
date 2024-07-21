@@ -1,6 +1,6 @@
 const URL = "https://www.saucedemo.com"
 
-class LoginPage{
+class LoginPage {
     #username = '#user-name'
     #password = '#password'
     #login_button = '#login-button'

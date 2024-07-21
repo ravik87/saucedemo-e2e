@@ -1,5 +1,6 @@
 import LoginPage from "./pages/login_page";
 import InventoryPage from "./pages/inventory_page";
+import CartPage from "./pages/cart_page";
 
 // Swag Labs UI Page Factory
 class SwagLabs {
@@ -10,6 +11,10 @@ class SwagLabs {
 
     static inventoryPage() {
         return new InventoryPage();
+    }
+
+    static cartPage() {
+        return new CartPage();
     }
 }
 
