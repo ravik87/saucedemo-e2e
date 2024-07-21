@@ -11,7 +11,7 @@ Before(() => {
 Given("I login to Swag Labs", (datatable) => {
     const credentials = datatable.rowsHash();
     SwagLabs.loginPage()
-        .withCredentials(credentials["username"], 'secret_sauce')
+        .withCredentials(credentials["username"], Cypress.env('PASSWORD'))
         .login();
 });
 

@@ -30,5 +30,9 @@
   "cypress-cucumber-preprocessor": {
     "nonGlobalStepDefinitions": false,
     "step_definitions": "cypress/e2e/features/steps"
+  },
+  "devDependencies": {
+    "cypress-dotenv": "^2.0.0",
+    "dotenv": "^16.4.5"
   }
 }
