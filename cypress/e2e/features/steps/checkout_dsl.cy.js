@@ -19,7 +19,16 @@ Given("I add random {string} items to my cart", (items_count, datatable) => {
 When("I checkout items with my details", (datatable) => {
     SwagLabs.cartPage()
         .checkout();
+
+    SwagLabs.checkoutInfoPage()
+        .withInfo(datatable.hashes()[0])
+        .continue();
 });
 
 Then("I place the order with checkout items", () => {
+    SwagLabs.checkoutOverviewPage()
+        .finish();
+
+    SwagLabsUIAssert.checkoutCompletePageAssert()
+        .checkOrderConfirmation();
 });

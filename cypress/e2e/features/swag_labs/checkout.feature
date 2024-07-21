@@ -21,6 +21,6 @@
         | Sauce Labs Bike Light    |
         | Sauce Labs Fleece Jacket |
       When I checkout items with my details
-        | firstname | lastname | zip    |
-        | SysInt    | Test     | 410203 |
+        | first_name | last_name | postal_code |
+        | SysInt     | Test      | 410203      |
       Then I place the order with checkout items
