@@ -4,7 +4,8 @@ import SwagLabs from "../../../support/modules/web_ui/swag_labs";
 import SwagLabsUIAssert from "../../../support/assertion/web_ui/swag_labs_ui_assert";
 
 Before(() => {
-    SwagLabs.loginPage().visit()
+    SwagLabs.loginPage()
+        .visit();
 })
 
 Given("I login to Swag Labs", (datatable) => {

@@ -1,7 +1,6 @@
 import SwagLabs from "../../modules/web_ui/swag_labs";
-import AbstractUIAssert from "../abstract_ui_assert";
 
-class InventoryPageAssert extends AbstractUIAssert {
+class InventoryPageAssert {
 
     hasLogo(logo_name) {
         cy.get(SwagLabs.inventoryPage().getAppLogo())

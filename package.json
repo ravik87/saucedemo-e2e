@@ -30,8 +30,5 @@
   "cypress-cucumber-preprocessor": {
     "nonGlobalStepDefinitions": false,
     "step_definitions": "cypress/e2e/features/steps"
-  },
-  "devDependencies": {
-    "chai": "^5.1.1"
   }
 }

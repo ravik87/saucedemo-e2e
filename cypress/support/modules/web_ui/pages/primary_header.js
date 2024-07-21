@@ -25,6 +25,11 @@ class PrimaryHeader {
         cy.get(this.#burger_menu_btn).click()
         cy.get(this.#logout_sidebar_link).click()
     }
+
+    goToCart() {
+        cy.get(this.#shopping_cart_link).click();
+        return this;
+    }
 }
 
 export default PrimaryHeader

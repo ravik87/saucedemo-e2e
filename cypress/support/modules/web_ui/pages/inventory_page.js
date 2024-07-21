@@ -15,6 +15,19 @@ class InventoryPage extends PrimaryHeader {
     visit() {
         cy.visit(URL)
     }
+
+    addProductsToCart(products) {
+        products.forEach((product) => {
+            const selector = "add-to-cart-" + product.toString()
+                .replaceAll(" ", "-")
+                .toLowerCase();
+
+            cy.get('[data-test*="inventory-list"]')
+                .find('[data-test*='+ selector + ']')
+                .click()
+        });
+        return this;
+    }
 }
 
 export default InventoryPage
