@@ -2,7 +2,7 @@
 // Provides general utility operations
 class Utility {
     static getRandomItemInList(list) {
-        return list[Math.floor(Math.random() * list.length)]
+        return list[Math.floor(Math.random() * list.length)][0]
     }
 
     static getRandomSubsetOfList(list, count) {
