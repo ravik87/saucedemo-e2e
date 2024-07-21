@@ -1,4 +1,4 @@
-const URL = "https://www.saucedemo.com/checkout-complete.html"
+const URL = "/checkout-complete.html"
 
 class CheckoutCompletePage {
     #complete_header = '[data-test*="complete-header"]'

@@ -1,6 +1,6 @@
 import PrimaryHeader from "./primary_header";
 
-const URL = "https://www.saucedemo.com/inventory.html"
+const URL = "/inventory.html"
 
 class InventoryPage extends PrimaryHeader {
 

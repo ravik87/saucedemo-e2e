@@ -1,5 +1,4 @@
-const URL = "https://www.saucedemo.com"
-
+// Login Page Object Model
 class LoginPage {
     #username = '#user-name'
     #password = '#password'
@@ -15,7 +14,7 @@ class LoginPage {
     visit() {
         cy.clearCookies()
         cy.clearAllSessionStorage({log: true})
-        cy.visit(URL)
+        cy.visit('/')
     }
 
     withCredentials(username, password) {

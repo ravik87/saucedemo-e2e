@@ -1,4 +1,4 @@
-const URL = "https://www.saucedemo.com/checkout-step-two.html"
+const URL = "/checkout-step-two.html"
 
 class CheckoutOverviewPage {
     #cart_footer = '.cart_footer'

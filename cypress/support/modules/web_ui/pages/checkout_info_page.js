@@ -1,4 +1,4 @@
-const URL = "https://www.saucedemo.com/checkout-step-one.html"
+const URL = "/checkout-step-one.html"
 
 class CheckoutInfoPage {
     #first_name = '[data-test*="firstName"]'
