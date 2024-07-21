@@ -8,9 +8,10 @@ class Utility {
     static getRandomSubsetOfList(list, count) {
         let final_list = []
         let random_item = null
+        let filtered_list = this.getFilteredList(list, random_item)
         for (let i=0; i<count; i++) {
-            list = this.getFilteredList(list, random_item)
-            random_item = this.getRandomItemInList(list)
+            random_item = this.getRandomItemInList(filtered_list)
+            filtered_list = this.getFilteredList(filtered_list, random_item)
             final_list.push(random_item)
         }
         return final_list
@@ -20,7 +21,10 @@ class Utility {
         if (filter_item == null) {
             return list
         }
-        return list.filter(v => v !== filter_item)
+
+        return list.filter(v =>
+            v.toString().replaceAll(" ", "").toLowerCase() !==
+            filter_item.toString().replaceAll(" ", "").toLowerCase());
     }
 }
 

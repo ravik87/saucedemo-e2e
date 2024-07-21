@@ -17,15 +17,16 @@ class InventoryPage extends PrimaryHeader {
     }
 
     addProductsToCart(products) {
-        products.forEach((product) => {
-            const selector = "add-to-cart-" + product.toString()
-                .replaceAll(" ", "-")
-                .toLowerCase();
-
-            cy.get('[data-test*="inventory-list"]')
-                .find('[data-test*='+ selector + ']')
-                .click()
-        });
+        cy.get('[data-test*="inventory-list"]')
+            .get('[data-test*="inventory-item-description"]')
+            .each(($row) => {
+                if (products.includes($row.find('.inventory_item_name').text())) {
+                    cy.wrap($row)
+                        .find('button')
+                        .contains('Add to cart')
+                        .click()
+                }
+            })
         return this;
     }
 }

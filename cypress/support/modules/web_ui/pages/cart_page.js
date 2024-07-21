@@ -3,6 +3,9 @@ const URL = "https://www.saucedemo.com/cart.html"
 class CartPage {
     #cart_footer = '.cart_footer'
     #checkout_button = '[data-test*="checkout"]'
+    #cart_list = '[data-test*="cart-list"]'
+    #cart_item = '.cart_item'
+    #inventory_item_name = '.inventory_item_name'
 
     constructor() {
         if (CartPage._instance) {
@@ -13,6 +16,18 @@ class CartPage {
 
     visit() {
         cy.visit(URL)
+    }
+
+    cartList() {
+        return this.#cart_list;
+    }
+
+    cartItem() {
+        return this.#cart_item;
+    }
+
+    inventoryItemName() {
+        return this.#inventory_item_name;
     }
 
     checkout() {
