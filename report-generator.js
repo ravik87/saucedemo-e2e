@@ -7,7 +7,7 @@ const reportGenerationTime = new Date().toISOString();
 report.generate({
     reportName: 'E2E Test Report',
     jsonDir: 'reports/cucumber-json-reports',
-    reportPath: 'reports/cucumber-json-reports/html',
+    reportPath: 'reports/cucumber-reports/html',
     openReportInBrowser: true,
     disableLog: true,
     displayDuration: true,

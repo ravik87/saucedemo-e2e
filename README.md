@@ -15,9 +15,22 @@ npx cypress open
 
 ## Run tests in headless mode
 ```
-npx cypress run --browser edge
+npm test
 npx cypress run --browser chrome
+npx cypress run --browser edge
 ```
+
+## Test Reports
+Cucumber reports are generated at the path `reports/cucumber-reports/html/index.html`, and cucumber JSON reports are generated at the path `reports/cucumber-json-reports`.
+Running test script command `npm test` generates report by default.
+
+To explicitly generate the report run one of the below commands.
+```
+npm run report
+node report-generator.js
+```
+> **Note**  
+> If no JSON files found in 'reports/cucumber-json-reports' then NO REPORT CAN BE CREATED!
 
 ## Test Automation DSL (JavaScript)
 Login & Logout flow
